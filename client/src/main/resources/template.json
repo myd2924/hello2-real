@@ -1,0 +1,10 @@
+[
+  {"id":"g01","pids":"g01","name":"丁家学","type":"grandfather"},
+  {"id":"g02","pids":"g02","name":"马凤平","type":"grandmother"},
+  {"id":"g03","pids":"g03","name":"杨书胜","type":"grandfather"},
+  {"id":"g04","pids":"g04","name":"赵发秀","type":"grandmother"},
+  {"id":"f01","pids":"g01,g02","name":"马元丁","type":"father"},
+  {"id":"m01","pids":"g03,g04","name":"杨帆","type":"mother"},
+  {"id":"d01","pids":"f01,m01","name":"马晨曦","type":"daughter"},
+  {"id":"d02","pids":"g03,g04","name":"丁业曦","type":"daughter"}
+]
