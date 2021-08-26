@@ -29,6 +29,9 @@ public class ItemCommandHandler {
     @CommandHandler
     @Transactional(rollbackFor = Exception.class)
     public Object create(CreateItemCommand  createItemCommand){
+        //command -> Aggregate ->event
+
+
         ItemCreatedEvent event = new ItemCreatedEvent();
         event.setId(createItemCommand.getId());
         event.setDesc(createItemCommand.getDesc());
