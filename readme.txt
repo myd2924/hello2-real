@@ -11,3 +11,5 @@
 （注：这里的master db, slave db只是一个逻辑上的区分，可以是真正的主-从库，也可以都是一个库）。
 这样的架构，很容易实现读写分离，也易于大型项目的扩展。
 5.2-command是业务，event是状态转移；commandBus 命令总线分发  eventBus 事件总线分发
+
+6、orika  beanMapper实践
