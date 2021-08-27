@@ -19,7 +19,6 @@ import org.axonframework.spring.stereotype.Aggregate;
 @Getter
 @Setter
 @NoArgsConstructor
-@Aggregate
 public class ItemAggr{
 
     @AggregateIdentifier

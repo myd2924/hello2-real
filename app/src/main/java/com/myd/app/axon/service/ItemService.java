@@ -5,6 +5,9 @@ import com.myd.app.axon.command.CreateItemCommand;
 import com.myd.app.axon.command.ItemCommandCallback;
 import com.myd.app.axon.request.ItemCompleteRequest;
 import com.myd.app.axon.request.ItemCreateRequest;
+import com.myd.app.bean.form.PersonForm;
+import com.myd.app.bean.request.PersonRequest;
+import com.myd.app.component.BeanMapper;
 import org.axonframework.commandhandling.CommandBus;
 import org.axonframework.commandhandling.GenericCommandMessage;
 import org.springframework.beans.BeanUtils;
@@ -37,5 +40,10 @@ public class ItemService {
         ItemCommandCallback callback = new ItemCommandCallback();
         commandBus.dispatch(new GenericCommandMessage(completeItemCommand),callback);
         return callback.getResult();
+    }
+
+    public PersonRequest copyBean(PersonForm form){
+        final PersonRequest personRequest = BeanMapper.map(form, PersonRequest.class);
+        return personRequest;
     }
 }
