@@ -1,0 +1,46 @@
+package com.myd.app.drool;
+
+import com.myd.app.drool.hello.Clock;
+
+rule "hello"
+    agenda-group "flow"
+    auto-focus false
+    activation-group "flow-activation"
+    salience 100
+    when
+        $s:Clock(hour == 2 || minutes == 2 || seconds ==2)
+    then
+        $s.autoPrint();
+ end
+
+rule "run"
+   salience 1
+   when
+        c:Clock(!(hour ==1 || seconds ==1))
+    then
+        System.out.println(c);
+        Thread.sleep(1000);
+        c.setSeconds(c.getSeconds()+1);
+        update(c);
+end
+
+rule "second"
+   salience 2
+   when
+        c:Clock( seconds ==60)
+    then
+        c.setMinutes(c.getMinutes()+1);
+        c.setSeconds(0);
+        update(c);
+end
+
+rule "minute"
+   salience 3
+   when
+        c:Clock( minutes ==60)
+    then
+        c.setHour(c.getHour()+1);
+        c.setMinutes(0);
+        update(c);
+end
+

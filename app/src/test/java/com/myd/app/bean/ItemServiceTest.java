@@ -3,9 +3,13 @@ package com.myd.app.bean;
 import com.myd.app.axon.service.ItemService;
 import com.myd.app.bean.form.PersonForm;
 import com.myd.app.bean.request.PersonRequest;
+import javafx.application.Application;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.stereotype.Component;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * @author <a href="mailto:mayuanding@qianmi.com">OF3787-马元丁</a>
@@ -13,7 +17,10 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @Date:2021/8/27 10:18
  * @Description:
  */
-@SpringBootTest
+@SpringBootTest(classes = Application.class,
+                webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@RunWith(SpringJUnit4ClassRunner.class)
+@Component
 public class ItemServiceTest {
 
     @Autowired
